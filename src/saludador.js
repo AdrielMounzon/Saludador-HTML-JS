@@ -5,5 +5,11 @@ const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  div.innerHTML = "<p> hola "  + nombre.value + "</p>";
+
+    let gen;
+    if(genero.value=="hombre")
+        gen = "Sr. ";
+    if (genero.value=="mujer")
+        gen = "Sra. ";
+  div.innerHTML = "<p> Hola " + gen + nombre.value + "</p>";
 });
