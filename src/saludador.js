@@ -23,5 +23,17 @@ form.addEventListener("submit", (event) => {
       else
       gen = "Sra. ";
     }
-  div.innerHTML = "<p> Hola " + gen + nombre.value + "</p>";
+    let fechaActual = new Date();
+    let horaActual = fechaActual.getHours();
+    let saludoHora = "Hola"
+    if(horaActual < 12)
+      saludoHora = "Buenos días "
+    else
+    {
+      if (horaActual > 12 && horaActual < 20)
+        saludoHora = "Buenas tardes "
+      else
+      saludoHora = "Buenas noches "
+    }
+  div.innerHTML = "<p>" + saludoHora + gen + nombre.value + "</p>";
 });
